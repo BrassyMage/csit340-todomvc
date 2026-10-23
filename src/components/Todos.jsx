@@ -115,7 +115,7 @@ function handleDelete(id) {
             </button>
             </li>
         </ul>
-        <button type="button" className="cursor-pointer justify-self-end hover:underline">
+        <button type="button" onClick={handleDelete} className="cursor-pointer justify-self-end hover:underline">
             Clear completed
         </button>
         </footer>
