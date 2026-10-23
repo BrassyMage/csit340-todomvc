@@ -26,12 +26,11 @@ function handleToggle(id) {
 function handleDelete(id) {
     setTodos(todos.filter((todo) => todo.id !== id))
 }
-
     return (
     <section className="mx-auto max-w-[550px]">
         <h1 className="text-center text-[80px] font-extralight text-[#b83f45]">todos</h1>
         <div className="relative bg-white shadow-[0_2px_4px_0_rgba(0,0,0,0.2),0_25px_50px_0_rgba(0,0,0,0.1)]">
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
         <input
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -89,7 +88,7 @@ function handleDelete(id) {
         {todos.filter((todo) => !todo.completed).length === 1
             ? "item"
             : "items"} left
-        </span>
+                </span>
         <ul className="flex justify-center gap-1">
             <li>
             <button
@@ -116,7 +115,7 @@ function handleDelete(id) {
             </button>
             </li>
         </ul>
-        <button type="button" className="cursor-pointer justify-self-end hover:underline">
+        <button type="button" onClick={handleDelete} className="cursor-pointer justify-self-end hover:underline">
             Clear completed
         </button>
         </footer>
