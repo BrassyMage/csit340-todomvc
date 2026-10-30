@@ -113,7 +113,9 @@ const filteredTodos = todos.filter((todo) => {
             <button
                 type="button"
                 onClick={() => setFilter("All")}
-                className="cursor-pointer rounded-[3px] border border-[#b83f45]/20 px-[7px] py-[3px]"
+                className={filter === "All"
+                    ? "cursor-pointer rounded-[3px] border border-[#b83f45]/20 px-[7px] py-[3px]"
+                    : "cursor-pointer rounded-[3px] border border-transparent px-[7px] py-[3px] hover:border-[#b83f45]/10"}
             >
                 All
             </button>
@@ -122,7 +124,9 @@ const filteredTodos = todos.filter((todo) => {
             <button
                 type="button"
                 onClick={() => setFilter("Active")}
-                className="cursor-pointer rounded-[3px] border border-transparent px-[7px] py-[3px] hover:border-[#b83f45]/10"
+                className={filter === "Active"
+                    ? "cursor-pointer rounded-[3px] border border-[#b83f45]/20 px-[7px] py-[3px]"
+                    : "cursor-pointer rounded-[3px] border border-transparent px-[7px] py-[3px] hover:border-[#b83f45]/10"}
             >
                 Active
             </button>
@@ -131,7 +135,9 @@ const filteredTodos = todos.filter((todo) => {
             <button
                 type="button"
                 onClick={() => setFilter("Completed")}
-                className="cursor-pointer rounded-[3px] border border-transparent px-[7px] py-[3px] hover:border-[#b83f45]/10"
+                className={filter === "Completed"
+                    ? "cursor-pointer rounded-[3px] border border-[#b83f45]/20 px-[7px] py-[3px]"
+                    : "cursor-pointer rounded-[3px] border border-transparent px-[7px] py-[3px] hover:border-[#b83f45]/10"}
             >
                 Completed
             </button>
