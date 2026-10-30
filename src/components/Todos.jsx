@@ -29,6 +29,10 @@ function handleDelete(id) {
     setTodos(todos.filter((todo) => todo.id !== id))
 }
 
+function handleClearCompleted() {
+    setTodos(todos.filter((todo) => !todo.completed))
+}
+
 function handleToggleAll(){
     setTodos(
         todos.map((todo) => ({ ...todo, completed: !allCompleted }))
@@ -133,7 +137,7 @@ const filteredTodos = todos.filter((todo) => {
             </button>
             </li>
         </ul>
-        <button type="button" onClick={handleDelete} className="cursor-pointer justify-self-end hover:underline">
+        <button type="button" onClick={handleClearCompleted} className="cursor-pointer justify-self-end hover:underline">
             Clear completed
         </button>
         </footer>
